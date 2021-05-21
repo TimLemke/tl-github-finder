@@ -4,18 +4,26 @@ import { Link } from 'react-router-dom';
 
 const Navbar = ({ icon, title }) => {
   return (
-    <nav className='navbar bg-primary'>
-      <h1>
-        <i className={icon}></i> {title}
-      </h1>
-      <ul>
-        <li>
-          <Link to='/'>Home</Link>
-        </li>
-        <li>
-          <Link to='/about'>About</Link>
-        </li>
-      </ul>
+    <nav className='navbar navbar-expand navbar-dark bg-primary fixed-top'>
+      <div className='container'>
+        <Link to='/' className='navbar-brand'>
+          <i className={icon}></i> {title}
+        </Link>
+        <div>
+          <ul className='navbar-nav ml-auto'>
+            <li className='nav-item'>
+              <Link to='/' className='nav-link'>
+                Home
+              </Link>
+            </li>
+            <li className='nav-item'>
+              <Link to='/about' className='nav-link'>
+                About
+              </Link>
+            </li>
+          </ul>
+        </div>
+      </div>
     </nav>
   );
 };

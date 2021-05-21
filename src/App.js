@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Navbar from './components/layout/Navbar';
+import Footer from './components/layout/Footer';
 
 import Home from './components/pages/Home';
 import About from './components/pages/About';
@@ -26,7 +27,7 @@ const App = () => {
         <Router>
           <div className='App'>
             <Navbar />
-            <div className='container'>
+            <main role='main' className='container'>
               <Alert />
               <Switch>
                 <Route exact path='/' component={Home} />
@@ -34,7 +35,8 @@ const App = () => {
                 <Route exact path='/user/:login' component={User} />
                 <Route component={NotFound} />
               </Switch>
-            </div>
+            </main>
+            <Footer />
           </div>
         </Router>
       </AlertState>
